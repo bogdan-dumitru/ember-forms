@@ -1,7 +1,7 @@
 var fmt = Ember.String.fmt;
 
 /**
-  `Ember.Select` is meant to be bound to collections with a changing nature, 
+  `Ember.Select` is meant to be bound to collections with a changing nature,
   but with big collections, it comes with a big performance penalty. In order
   to address this issue, we've created a "static" one - meaning that won't
   change as the associated collection changes. This makes it perfect for things
@@ -21,12 +21,12 @@ EF.UnboundSelect = Ember.View.extend({
   */
   options: Ember.computed(function(){
     var output;
-    if(!Ember.empty(this.get('prompt'))){
+    if(!Ember.isEmpty(this.get('prompt'))){
       output = '<option value="">' + this.get('prompt') + '</option>';
     }
     this.get('content').forEach(function(item){
       var value, label;
-      if(!Ember.empty(item.value)){
+      if(!Ember.isEmpty(item.value)){
         value = item.value;
         label = item.label;
       }else{ value = item; label = item; }
